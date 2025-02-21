@@ -55,7 +55,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     status.style.color = '#1a237e';
 
     setTimeout(() => {
-        status.textContent = 'Message sent! We’ll respond soon.';
+        status.textContent = 'Message sent! Weâ€™ll respond soon.';
         status.style.color = '#1a237e';
         this.reset();
     }, 1000);
