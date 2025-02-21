@@ -88,7 +88,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: url(futuristic-tech-horizon.jpg) no-repeat center center/cover;
+    background: url('futuristic-tech-horizon.jpg') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -247,43 +247,6 @@ nav {
 @media (max-width: 768px) {
     .slide {
         flex: 0 0 80%;
-    }
-}
-
-/* Testimonials Section */
-.testimonials-section {
-    background: #e0e0e0;
-}
-
-.testimonial-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.testimonial {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 45%;
-    text-align: center;
-}
-
-.testimonial p {
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.testimonial cite {
-    color: #1a237e;
-    font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .testimonial {
-        width: 100%;
     }
 }
 
