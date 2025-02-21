@@ -88,7 +88,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: url('futuristic-tech-horizon.jpg') no-repeat center center/cover;
+    background: url(futuristic-tech-horizon.jpg) no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
