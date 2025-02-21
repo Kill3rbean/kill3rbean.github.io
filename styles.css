@@ -14,7 +14,7 @@ body {
 
 /* Navigation */
 nav {
-    background: linear-gradient(90deg, #1a237e, #3f51b5); /* Gradient navy to blue */
+    background: linear-gradient(90deg, #1a237e, #3f51b5);
     color: white;
     padding: 1.5rem 2rem;
     display: flex;
@@ -32,7 +32,7 @@ nav {
 }
 
 .logo span {
-    color: #ffca28; /* Yellow for emphasis */
+    color: #ffca28;
 }
 
 .nav-links {
@@ -55,9 +55,40 @@ nav {
     color: #ffca28;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #1a237e;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.8rem 0;
+    }
+}
+
 /* Hero Section */
 .hero {
-    background: url('background.jpg') no-repeat center center/cover; /* Add your image here */
+    background: url(futuristic-tech-horizon.jpg) no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -74,7 +105,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -113,6 +144,12 @@ nav {
 /* Sections */
 .section {
     padding: 4rem 2rem;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.section.fade-in {
+    opacity: 1;
 }
 
 .section h2 {
@@ -141,38 +178,113 @@ nav {
     font-size: 1.2rem;
 }
 
-/* Services Section */
-.services-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+/* Services Section with Slider */
+.services-section {
+    background: #f0f0f0;
 }
 
-.service-item {
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 2rem;
+}
+
+.slide {
+    flex: 0 0 30%;
     background: white;
     padding: 2rem;
-    width: 250px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.service-item:hover {
+.slide:hover {
     transform: translateY(-10px);
 }
 
-.service-item i {
+.slide i {
     font-size: 2.5rem;
     color: #1a237e;
     margin-bottom: 1rem;
 }
 
-.service-item h3 {
+.slide h3 {
     font-size: 1.5rem;
     color: #1a237e;
     margin-bottom: 0.5rem;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffca28;
+    color: #1a237e;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 80%;
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #e0e0e0;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial cite {
+    color: #1a237e;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        width: 100%;
+    }
 }
 
 /* Contact Section */
@@ -200,6 +312,13 @@ nav {
     height: 150px;
 }
 
+#form-status {
+    color: #1a237e;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+}
+
 /* Footer */
 footer {
     background: #1a237e;
@@ -207,37 +326,4 @@ footer {
     text-align: center;
     padding: 1.5rem;
     font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links li {
-        margin: 0.8rem 0;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-.section {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-}
-
-.section.fade-in {
-    opacity: 1;
 }
